@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decode</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- docum -->
+
+    <link rel="stylesheet" href="css/compress.css">
+    <!-- <link rel="javascipt" href="js/index.js"> -->
+    <link rel="javascipt" href="js/login.js">
+</head>
+<script>
+    function app(){
+        $('#shape').hide();
+    }
+    function checker() {
+        var address = $('#email').val();
+        var regEmail = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+        if (regEmail.test(address) == true){
+            console.log('vaild');
+            $('#shape').hide();
+            alert('vaild')
+        }
+        else{
+            $('#shape').show();
+        }
+    }
+</script>
+<body onload="app()">
+    <div class="lg-iv">
+        <div class="rt-1">
+            <img class="rt-logo" src="./image/logos.png">
+            <!-- logo_here -->
+            <!-- vd_display_left -->
+            <!-- login or create_account block -->
+        </div>
+        <div class="lt-1">
+            <div class="login_ui">
+                <div class="login-text fonts">
+                    로그인
+                </div>
+                <div class="login-text-new-user fonts">
+                    신규 사용자이신가요? <span style="color: blue;">계정 만들기</span>
+                </div>
+                
+                    <!-- < class="ea"> -->
+                <label class="ea-tx1">이메일 주소</label>
+                <input class="ea-in" autofocus id="email" type="email">
+                <div class="warn-text" id="shape">
+                    <span class="warn-text-1" id="warn">올바른 이메일 주소를 입력하세요.</span>
+                </div>
+                <button class="ea-c" onclick="checker()">
+                    <span class="ea-c-t">
+                        Continue
+                    </span>
+                </button>
+                <div class="or">
+                    <div class="or-1"></div>
+                    <div class="or-t">&nbsp;OR&nbsp;</div>
+                    <div class="or-2"></div>
+                </div>
+                <button class="cg">
+                    <span class="cg-g-t">
+                        Continue with Google
+                    </span>
+                </button>
+                <button class="ag">
+                    <span class="ag-a-t">
+                        Continue with Apple
+                    </span>
+                </button>
+                <div class="help">
+                    로그인에 문제가 있나요?
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
